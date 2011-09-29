@@ -5,7 +5,6 @@ gem 'rails', '3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem 'devise', '~> 1.4.7'
 gem 'gmaps4rails', '~> 1.1.7'
 gem 'acts-as-taggable-on', '~> 2.1.1'
@@ -37,6 +36,7 @@ end
 
 group :development do
   gem 'annotate', '2.4.1.beta1'
+  gem 'sqlite3'
 end
 
 group :production do
