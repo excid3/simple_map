@@ -19,7 +19,9 @@
       <div class="container">
         <a class="brand" href="<%= root_path %>">Start Louis Map</a>
         <ul class="nav">
-          <li><%= link_to "Add Your Business", new_business_path %></li>
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "All Businesses", businesses_path %></li>
+          <li><%= link_to "Add Yours", new_business_path %></li>
         </ul>
         <p class="pull-right">
         <% if user_signed_in? %>
