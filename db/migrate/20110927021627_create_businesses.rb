@@ -11,7 +11,7 @@ class CreateBusinesses < ActiveRecord::Migration
       t.string :lat
       t.string :lng
       t.boolean :gmaps
-      t.user_id :integer
+      t.integer :user_id
 
       t.timestamps
     end
