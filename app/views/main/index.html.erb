@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="span16 gmaps">
+    <%= gmaps4rails @markers %>
+  </div>
+</div>
+
+<div class="row">
+  <% @businesses[0..3].each do |business| %>
+    <div class="span4">
+      <h2><%= business.name %></h2>
+      <p><%= business.description %></p>
+      <p><%= link_to "View details", business, :class => "btn" %></p>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,38 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  address_1: MyString
+  address_2: MyString
+  description: MyText
+  website: MyString
+  twitter: MyString
+  email: MyString
+
+two:
+  name: MyString
+  address_1: MyString
+  address_2: MyString
+  description: MyText
+  website: MyString
+  twitter: MyString
+  email: MyString
+# == Schema Information
+#
+# Table name: businesses
+#
+#  id          :integer         not null, primary key
+#  name        :string(255)
+#  address     :string(255)
+#  description :text
+#  website     :string(255)
+#  twitter     :string(255)
+#  email       :string(255)
+#  approved    :boolean         default(FALSE)
+#  lat         :string(255)
+#  lng         :string(255)
+#  gmaps       :boolean
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
