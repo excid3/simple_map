@@ -6,6 +6,11 @@ class BusinessesController < ApplicationController
     @businesses = Business.order(:name)
   end
 
+  def tagged
+    @tag = params[:tag]
+    @businesses = Business.tagged_with(@tag)
+  end
+
   # GET /businesses/1
   def show
     @business = Business.find(params[:id])

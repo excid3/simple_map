@@ -2,7 +2,12 @@ Maplouis::Application.routes.draw do
 
   devise_for :users
 
-  resources :businesses
+  resources :businesses do
+    collection do
+      get "tagged/:tag" => "businesses#tagged", :as => :tagged
+    end
+  end
+
   root :to => "main#index"
 
   # The priority is based upon order of creation:
