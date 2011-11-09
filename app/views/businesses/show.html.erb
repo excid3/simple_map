@@ -17,7 +17,7 @@
     <%= gmaps4rails Array(@business).to_gmaps4rails %>
   </div>
 
-  <% if @business.user_id == current_user.id %>
+  <% if user_signed_in? and @business.user_id == current_user.id %>
     <div class="span16">
       <div class="well">
         <p>You are the owner of this page. Make sure to keep it up to date!</p>
