@@ -14,3 +14,5 @@ body {
 .gmaps {
   margin: 0 60px 20px 60px;
 }
+
+.map_container { margin: 0 auto; }

@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20110929023703) do
     t.string   "lat"
     t.string   "lng"
     t.boolean  "gmaps"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -18,12 +18,12 @@ class BusinessesController < ApplicationController
 
   # GET /businesses/1/edit
   def edit
-    @business = Business.find(params[:id])
+    @business = current_user.businesses.find(params[:id])
   end
 
   # POST /businesses
   def create
-    @business = Business.new(params[:business])
+    @business = current_user.businesses.build(params[:business])
 
     if @business.save
       redirect_to @business, notice: 'Business was successfully created.'
@@ -34,7 +34,7 @@ class BusinessesController < ApplicationController
 
   # PUT /businesses/1
   def update
-    @business = Business.find(params[:id])
+    @business = current_user.businesses.find(params[:id])
 
     if @business.update_attributes(params[:business])
       redirect_to @business, notice: 'Business was successfully updated.'
@@ -45,7 +45,7 @@ class BusinessesController < ApplicationController
 
   # DELETE /businesses/1
   def destroy
-    @business = Business.find(params[:id])
+    @business = current_user.businesses.find(params[:id])
     @business.destroy
 
     redirect_to root_url #businesses_url

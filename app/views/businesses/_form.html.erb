@@ -4,50 +4,52 @@
       <h2><%= pluralize(@business.errors.count, "error") %> prohibited this business from being saved:</h2>
 
       <ul>
-      <% @business.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @business.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="clearfix">
-    <%= f.label :name %>
+    <%= f.label :name, "Business Name" %>
     <div class="input">
-      <%= f.text_field :name %>
+      <%= f.text_field :name, :class => "xxlarge" %>
     </div>
   </div>
 
   <div class="clearfix">
-    <%= f.label :address %>
+    <%= f.label :address, "Full Address" %>
     <div class="input">
-      <%= f.text_field :address %>
+      <%= f.text_field :address, :class => "xxlarge" %>
+      <span class="help-block">Example: 2603 Cherokee Street, St Louis, MO</span>
     </div>
   </div>
 
   <div class="clearfix">
     <%= f.label :description %>
     <div class="input">
-      <%= f.text_area :description %>
+      <%= f.text_area :description, :class => "xxlarge", :rows => 4 %>
     </div>
   </div>
 
   <div class="clearfix">
     <%= f.label :tag_list, "Tags" %>
     <div class="input">
-      <%= f.text_field :tag_list %>
+      <%= f.text_field :tag_list, :class => "xxlarge" %>
+      <span class="help-block">Example: Web Development, Web Design, Rails, Ruby</span>
     </div>
   </div>
 
   <div class="clearfix">
     <%= f.label :website %>
     <div class="input">
-      <%= f.text_field :website %>
+      <%= f.text_field :website, :class => "xxlarge" %>
     </div>
   </div>
 
   <div class="clearfix">
-    <%= f.label :twitter %>
+    <%= f.label :twitter, "Company Twitter" %>
     <div class="input">
       <div class="input-prepend">
         <span class="add-on">@</span>
@@ -57,7 +59,7 @@
   </div>
 
   <div class="clearfix">
-    <%= f.label :email %>
+    <%= f.label :email, "Company Email" %>
     <div class="input">
       <%= f.text_field :email %>
     </div>

@@ -1,35 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header"><h1><%= link_to @business.name, @business.website %></h1></div>
 
-<p>
-  <b>Name:</b>
-  <%= @business.name %>
-</p>
+<div class="row">
+  <div class="span10">
+    <p><%= @business.description %></p>
+    <p>Tags: <%= @business.tag_list %></p>
+  </div>
+  <div class="span6">
+    <h4>Contact Information</h4>
+    <p><%= link_to "@#{@business.twitter}", "http://twitter.com/#{@business.twitter}" %></p>
+    <p><%= mail_to @business.email %></p>
+    <p><%= @business.address %></p>
+  </div>
 
-<p>
-  <b>Address:</b>
-  <%= @business.address %>
-</p>
+  <div class="span16 gmaps">
+    <div class="page-header"><h3>Location</h3></div>
+    <%= gmaps4rails Array(@business).to_gmaps4rails %>
+  </div>
 
-<p>
-  <b>Description:</b>
-  <%= @business.description %>
-</p>
+  <% if @business.user_id == current_user.id %>
+    <div class="span16">
+      <div class="well">
+        <p>You are the owner of this page. Make sure to keep it up to date!</p>
+        <%= link_to 'Edit This Page', edit_business_path(@business), :class => "btn primary" %>
+        <%= link_to 'Delete This Page', edit_business_path(@business), :class => "btn danger", :method => :delete, :confirm => "Are you sure?" %>
+      </div>
+    </div>
+  <% end %>
 
-<p>
-  <b>Website:</b>
-  <%= @business.website %>
-</p>
-
-<p>
-  <b>Twitter:</b>
-  <%= @business.twitter %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @business.email %>
-</p>
-
-
-<%= link_to 'Edit', edit_business_path(@business) %> |
-<%= link_to 'Back', businesses_path %>
+</div>
