@@ -1,5 +1,5 @@
 class BusinessesController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :authenticate_user!, :except => [:index, :tagged, :show]
 
   # GET /businesses
   def index
